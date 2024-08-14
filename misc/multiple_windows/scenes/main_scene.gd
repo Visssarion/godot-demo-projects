@@ -1,13 +1,13 @@
 extends Control
 
-@onready var window: Window = $Window
-@onready var draggable_window: Window = $DraggableWindow
-@onready var file_dialogue: FileDialog = $FileDialog
-@onready var file_dialogue_output: TextEdit = $HBoxContainer/VBoxContainer2/FileDialogueOutput
-@onready var accept_dialogue: AcceptDialog = $AcceptDialog
-@onready var accept_dialogue_output: TextEdit = $HBoxContainer/VBoxContainer2/AcceptOutput
-@onready var confirmation_dialogue: ConfirmationDialog = $ConfirmationDialog
-@onready var confirmation_dialogue_output: TextEdit = $HBoxContainer/VBoxContainer2/ConfirmationOutput
+@onready var window : Window = $Window
+@onready var dragable_window : Window = $DraggableWindow
+@onready var file_dialog : FileDialog = $FileDialog
+@onready var file_dialog_output : TextEdit = $HBoxContainer/VBoxContainer2/FileDialogueOutput
+@onready var accept_dialog : AcceptDialog = $AcceptDialog
+@onready var accept_dialog_output : TextEdit = $HBoxContainer/VBoxContainer2/AcceptOutput
+@onready var confirmation_dialog : ConfirmationDialog = $ConfirmationDialog
+@onready var confirmation_dialog_output : TextEdit = $HBoxContainer/VBoxContainer2/ConfirmationOutput
 @onready var popup : Popup = $Popup
 @onready var popup_menu : PopupMenu = $PopupMenu
 @onready var popup_menu_output : TextEdit = $HBoxContainer/VBoxContainer3/PopupMenuOutput
@@ -20,6 +20,7 @@ func _on_embed_subwindows_toggled(toggled_on: bool) -> void:
 		if child is Window and child.is_visible():
 			child.hide()
 			hidden_windows.append(child)
+
 	embed_subwindows(toggled_on)
 	for _window in hidden_windows:
 		_window.show()
@@ -160,6 +161,7 @@ func show_popup(_popup: Popup):
 		mouse_position = get_global_mouse_position()
 	else:
 		mouse_position = DisplayServer.mouse_get_position()
+
 	_popup.popup(Rect2(mouse_position, _popup.size))
 
 

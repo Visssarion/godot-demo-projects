@@ -20,11 +20,13 @@ func _ready() -> void:
 
 
 func _on_index_pressed(index: int) -> void:
-	if is_item_checkable(index	):
+	if is_item_checkable(index):
 		set_item_checked(index, not is_item_checked(index))
+
 	match index:
 		2:
 			set_item_checked(3, false)
 		3:
 			set_item_checked(2, false)
+
 	option_pressed.emit(get_item_text(index))

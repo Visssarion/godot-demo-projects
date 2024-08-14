@@ -2,16 +2,16 @@ extends BaseButton
 
 @export var others: Array[BaseButton] = []
 
-enum Behaviour {
+enum Behavior {
 	ENABLE_OTHERS_WHEN_ENABLED,
 	ENABLE_OTHERS_WHEN_DISABLED
 }
 
-@export var behaviour: Behaviour = Behaviour.ENABLE_OTHERS_WHEN_ENABLED
+@export var behavior: Behavior = Behavior.ENABLE_OTHERS_WHEN_ENABLED
 
 func _ready() -> void:
 	var others_disabled: bool
-	if behaviour == Behaviour.ENABLE_OTHERS_WHEN_ENABLED:
+	if behavior == Behavior.ENABLE_OTHERS_WHEN_ENABLED:
 		others_disabled = not button_pressed
 	else:
 		others_disabled = button_pressed
@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 func _toggled(toggled_on: bool) -> void:
-	if behaviour == Behaviour.ENABLE_OTHERS_WHEN_ENABLED:
+	if behavior == Behavior.ENABLE_OTHERS_WHEN_ENABLED:
 		for other in others:
 			other.disabled = not toggled_on
 	else:

@@ -10,6 +10,7 @@ func _input_event(_viewport, event, _shape_idx):
 		if event.pressed:
 			window_delta = get_window().position - DisplayServer.mouse_get_position()
 
+
 func _process(_delta):
 	if held_down:
 		get_window().position = DisplayServer.mouse_get_position() + window_delta
