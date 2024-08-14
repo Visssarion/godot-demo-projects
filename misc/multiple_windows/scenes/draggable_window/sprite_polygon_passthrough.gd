@@ -11,7 +11,7 @@ extends Node
 
 func generate_polygon():
 	# Make a bitmap out of a sprite.
-	var bitmap = BitMap.new() 
+	var bitmap = BitMap.new()
 	bitmap.create_from_image_alpha(sprite.texture.get_image())
 	# Cell size in case sprite cell is used for animation.
 	var cell_size_x = float(bitmap.get_size().x) / sprite.hframes
@@ -31,7 +31,7 @@ func generate_polygon():
 	var first_point: Vector2 = bitmap_polygons[0][0]
 	# Uniting all polygons into polygon for window to use.
 	for bitmap_polygon: PackedVector2Array in bitmap_polygons:
-		for point: Vector2 in bitmap_polygon: 
+		for point: Vector2 in bitmap_polygon:
 			polygon.append(point + offset)
 
 		polygon.append(first_point)
