@@ -40,7 +40,7 @@ button_pressed = true
 text = "Embed Subwindows"
 script = ExtResource("2_psh0l")
 others = [NodePath("../TransparentWindow"), NodePath("../PassthroughPolygon")]
-behaviour = 1
+behavior = 1
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,9 +1,9 @@
 extends Control
 
 @onready var window : Window = $Window
-@onready var dragable_window : Window = $DraggableWindow
+@onready var draggable_window : Window = $DraggableWindow
 @onready var file_dialog : FileDialog = $FileDialog
-@onready var file_dialog_output : TextEdit = $HBoxContainer/VBoxContainer2/FileDialogueOutput
+@onready var file_dialog_output : TextEdit = $HBoxContainer/VBoxContainer2/FiledialogOutput
 @onready var accept_dialog : AcceptDialog = $AcceptDialog
 @onready var accept_dialog_output : TextEdit = $HBoxContainer/VBoxContainer2/AcceptOutput
 @onready var confirmation_dialog : ConfirmationDialog = $ConfirmationDialog
@@ -27,7 +27,7 @@ func _on_embed_subwindows_toggled(toggled_on: bool) -> void:
 
 
 func embed_subwindows(state: bool) -> void:
-	get_viewport().gui_embed_subwindows = state 
+	get_viewport().gui_embed_subwindows = state
 
 
 func _on_window_button_pressed() -> void:
@@ -84,75 +84,75 @@ func _on_passthrough_polygon_item_selected(index: int) -> void:
 			draggable_window.get_node("PassthroughGenerator").generate_polygon()
 		2:
 			draggable_window.mouse_passthrough_polygon = [
-					Vector2(16, 0), Vector2(16, 128), 
+					Vector2(16, 0), Vector2(16, 128),
 					Vector2(116, 128), Vector2(116, 0)]
 
 
-func _on_file_dialogue_button_pressed() -> void:
-	file_dialogue.show()
+func _on_file_dialog_button_pressed() -> void:
+	file_dialog.show()
 
 
 func _on_file_dialog_dir_selected(dir: String) -> void:
-	file_dialogue_output.text = "Directory Path: " + dir
+	file_dialog_output.text = "Directory Path: " + dir
 
 
 func _on_file_dialog_file_selected(path: String) -> void:
-	file_dialogue_output.text = "File Path: " + path
+	file_dialog_output.text = "File Path: " + path
 
 
 func _on_file_dialog_files_selected(paths: PackedStringArray) -> void:
-	file_dialogue_output.text = "Chosen Paths: " + str(paths)
+	file_dialog_output.text = "Chosen Paths: " + str(paths)
 
 
-func _on_file_dialogue_item_selected(index: int) -> void:
+func _on_file_dialog_item_selected(index: int) -> void:
 	match index:
 		0:
-			file_dialogue.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+			file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 		1:
-			file_dialogue.file_mode = FileDialog.FILE_MODE_OPEN_FILES
+			file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILES
 		2:
-			file_dialogue.file_mode = FileDialog.FILE_MODE_OPEN_DIR
+			file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_DIR
 		3:
-			file_dialogue.file_mode = FileDialog.FILE_MODE_OPEN_ANY
+			file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_ANY
 		4:
-			file_dialogue.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+			file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
 
-func _on_native_dialogue_toggled(toggled_on: bool) -> void:
-	file_dialogue.use_native_dialog = toggled_on
+func _on_native_dialog_toggled(toggled_on: bool) -> void:
+	file_dialog.use_native_dialog = toggled_on
 
 
 func _on_accept_button_text_submitted(new_text: String) -> void:
 	if not new_text.is_empty():
-		accept_dialogue.add_button(new_text, false, new_text)
+		accept_dialog.add_button(new_text, false, new_text)
 
 
 func _on_accept_dialog_canceled() -> void:
-	accept_dialogue_output.text = "Cancelled"
+	accept_dialog_output.text = "Cancelled"
 
 
 func _on_accept_dialog_confirmed() -> void:
-	accept_dialogue_output.text = "Accepted"
+	accept_dialog_output.text = "Accepted"
 
 
 func _on_accept_dialog_custom_action(action: StringName) -> void:
-	accept_dialogue_output.text = "Custom Action: " + action
-	accept_dialogue.hide()
+	accept_dialog_output.text = "Custom Action: " + action
+	accept_dialog.hide()
 
 
 func _on_accept_button_pressed() -> void:
-	accept_dialogue.show()
+	accept_dialog.show()
 
 
 func _on_confirmation_button_pressed() -> void:
-	confirmation_dialogue.show()
+	confirmation_dialog.show()
 
 
 func _on_confirmation_dialog_canceled() -> void:
-	confirmation_dialogue_output.text = "Cancelled"
+	confirmation_dialog_output.text = "Cancelled"
 
 
 func _on_confirmation_dialog_confirmed() -> void:
-	confirmation_dialogue_output.text = "Accepted"
+	confirmation_dialog_output.text = "Accepted"
 
 
 func show_popup(_popup: Popup):
