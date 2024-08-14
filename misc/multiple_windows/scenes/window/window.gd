@@ -8,4 +8,3 @@ func _ready() -> void:
 func _on_close_requested():
 	print("%s %s was hidden." % [str(self.get_class()), name])
 	hide()
-	
