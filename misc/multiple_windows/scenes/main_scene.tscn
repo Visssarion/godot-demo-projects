@@ -182,12 +182,12 @@ layout_mode = 2
 
 [node name="AcceptLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Accept Dialogue"
+text = "Accept Dialog"
 horizontal_alignment = 1
 
 [node name="AcceptButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Show Accept Dialogue"
+text = "Show Accept Dialog"
 
 [node name="NewButtonField" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -322,9 +322,7 @@ visible = false
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainerDW/Close" to="." method="_on_draggable_window_close_pressed"]
 [connection signal="toggled" from="HBoxContainer/VBoxContainer/BGDraggableWindow" to="." method="_on_bg_draggable_window_toggled"]
 [connection signal="item_selected" from="HBoxContainer/VBoxContainer/PassthroughPolygon" to="." method="_on_passthrough_polygon_item_selected"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer2/FileDialogueButton" to="." method="_on_file_dialogue_button_pressed"]
 [connection signal="item_selected" from="HBoxContainer/VBoxContainer2/OptionButton" to="." method="_on_file_dialogue_item_selected"]
-[connection signal="toggled" from="HBoxContainer/VBoxContainer2/NativeDialogue" to="." method="_on_native_dialogue_toggled"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="text_submitted" from="HBoxContainer/VBoxContainer2/NewButtonField/LineEdit" to="." method="_on_accept_button_text_submitted"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/ConfirmationButton" to="." method="_on_confirmation_button_pressed"]

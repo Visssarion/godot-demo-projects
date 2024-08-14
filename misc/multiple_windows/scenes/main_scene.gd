@@ -3,7 +3,7 @@ extends Control
 @onready var window : Window = $Window
 @onready var draggable_window : Window = $DraggableWindow
 @onready var file_dialog : FileDialog = $FileDialog
-@onready var file_dialog_output : TextEdit = $HBoxContainer/VBoxContainer2/FiledialogOutput
+@onready var file_dialog_output : TextEdit = $HBoxContainer/VBoxContainer2/FileDialogOutput
 @onready var accept_dialog : AcceptDialog = $AcceptDialog
 @onready var accept_dialog_output : TextEdit = $HBoxContainer/VBoxContainer2/AcceptOutput
 @onready var confirmation_dialog : ConfirmationDialog = $ConfirmationDialog
