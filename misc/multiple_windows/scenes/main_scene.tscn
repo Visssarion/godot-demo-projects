@@ -86,7 +86,7 @@ text = "Always on Top"
 
 [node name="TransparentWindow" type="CheckButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-tooltip_text = "Needs subwindows embed disabled to work."
+tooltip_text = "Needs embed_subwindows disabled to work."
 text = "Transparent
 "
 
@@ -121,7 +121,7 @@ fit_content = true
 
 [node name="BGDraggableWindow" type="CheckButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-tooltip_text = "Needs subwindows embed disabled to work."
+tooltip_text = "Needs embed_subwindows disabled to work."
 text = "Add Background"
 
 [node name="PassthroughLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
@@ -130,7 +130,7 @@ text = "Passthrough Polygon:"
 
 [node name="PassthroughPolygon" type="OptionButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-tooltip_text = "Needs subwindows embed disabled to wo	rk."
+tooltip_text = "Needs embed_subwindows disabled to work."
 selected = 0
 item_count = 3
 popup/item_0/text = "Empty"
@@ -142,14 +142,14 @@ popup/item_2/id = 2
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="FileDialogueLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
+[node name="FileDialogLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "File Dialogue"
+text = "File Dialog"
 horizontal_alignment = 1
 
-[node name="FileDialogueButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
+[node name="FileDialogButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Show File Dialogue"
+text = "Show File Dialog"
 
 [node name="OptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -165,12 +165,12 @@ popup/item_3/id = 3
 popup/item_4/text = "Save"
 popup/item_4/id = 4
 
-[node name="NativeDialogue" type="CheckButton" parent="HBoxContainer/VBoxContainer2"]
+[node name="NativeDialog" type="CheckButton" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Use Native
-Dialogue"
+Dialog"
 
-[node name="FileDialogueOutput" type="TextEdit" parent="HBoxContainer/VBoxContainer2"]
+[node name="FileDialogOutput" type="TextEdit" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 2
 placeholder_text = "Chosen path will show up here."
@@ -215,7 +215,7 @@ layout_mode = 2
 
 [node name="ConfirmationLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Confirmation Dialogue"
+text = "Confirmation Dialog"
 horizontal_alignment = 1
 
 [node name="ConfirmationButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
