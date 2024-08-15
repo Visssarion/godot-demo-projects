@@ -115,7 +115,7 @@ layout_mode = 2
 theme_override_font_sizes/normal_font_size = 12
 text = "This window uses Area2D to detect if user clicked inside of it.
 Since it's Area2D, you can change it's CollisionShape2D.
-But since Area2D is a Physics Object, \"Physics Object Picking\" inside of Window's properties hard to be enabled. 
+But since Area2D is a Physics Object, \"Physics Object Picking\" inside of Window's properties hard to be enabled.
 "
 fit_content = true
 
