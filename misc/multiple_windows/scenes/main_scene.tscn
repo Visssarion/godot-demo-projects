@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8nmbmlqd6df6"]
+[gd_scene load_steps=13 format=3 uid="uid://8nmbmlqd6df6"]
 
 [ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_nwc20"]
 [ext_resource type="PackedScene" uid="uid://blbehgenpldb" path="res://scenes/window/window.tscn" id="2_ldw47"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://p7lgllpnc8h8" path="res://scenes/popup/popup.tscn" id="8_vohc5"]
 [ext_resource type="PackedScene" uid="uid://j7j6fe7plvmt" path="res://scenes/popup_menu/popup_menu.tscn" id="9_b1y32"]
 [ext_resource type="PackedScene" uid="uid://dj15to28g17lb" path="res://scenes/popup_panel/popup_panel.tscn" id="10_rn47v"]
+[ext_resource type="PackedScene" uid="uid://bfsfek8h27vha" path="res://scenes/status_indicator/status_indicator.tscn" id="12_cb4u3"]
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -238,7 +239,7 @@ text = "Popup"
 horizontal_alignment = 1
 
 [node name="PopupButton" type="Button" parent="HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(150, 120)
+custom_minimum_size = Vector2(150, 85)
 layout_mode = 2
 text = "Show Popup"
 
@@ -259,7 +260,7 @@ text = "Popup"
 horizontal_alignment = 1
 
 [node name="PopupMenuButton" type="Button" parent="HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(150, 120)
+custom_minimum_size = Vector2(150, 85)
 layout_mode = 2
 text = "Show Popup"
 
@@ -279,9 +280,28 @@ text = "Popup"
 horizontal_alignment = 1
 
 [node name="PopupPanelButton" type="Button" parent="HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(150, 120)
+custom_minimum_size = Vector2(150, 85)
 layout_mode = 2
 text = "Show Popup"
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="StatusIndicatorLabel" type="Label" parent="HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Status Indicator"
+horizontal_alignment = 1
+
+[node name="StatusIndicatorVisible" type="CheckButton" parent="HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+button_pressed = true
+text = "Visible Tray Icon"
+
+[node name="OSLimitation" type="RichTextLabel" parent="HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "Only works on Windows and macOS"
+fit_content = true
 
 [node name="Window" parent="." instance=ExtResource("2_ldw47")]
 visible = false
@@ -309,6 +329,9 @@ unfocusable = false
 [node name="PopupPanel" parent="." instance=ExtResource("10_rn47v")]
 visible = false
 
+[node name="StatusIndicator" parent="." instance=ExtResource("12_cb4u3")]
+tooltip = "Multiple Windows Demo"
+
 [connection signal="toggled" from="HBoxContainer/VBoxContainer/EmbedSubwindows" to="." method="_on_embed_subwindows_toggled"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/WindowButton" to="." method="_on_window_button_pressed"]
 [connection signal="text_changed" from="HBoxContainer/VBoxContainer/WindowTitleEdit" to="." method="_on_window_title_edit_text_changed"]
@@ -329,6 +352,7 @@ visible = false
 [connection signal="pressed" from="HBoxContainer/VBoxContainer3/PopupButton" to="." method="_on_popup_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer3/PopupMenuButton" to="." method="_on_popup_menu_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer3/PopupPanelButton" to="." method="_on_popup_panel_button_pressed"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer3/StatusIndicatorVisible" to="." method="_on_status_indicator_visible_toggled"]
 [connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="files_selected" from="FileDialog" to="." method="_on_file_dialog_files_selected"]

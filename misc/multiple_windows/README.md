@@ -9,6 +9,7 @@ It includes:
 - Showcase of all Dialog Windows.
 - Showcase of all Popup Windows.
 - Adding elements to Popup Menu.
+- Adding an icon to system tray.
 
 Language: GDScript
 

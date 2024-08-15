@@ -12,6 +12,7 @@ extends Control
 @onready var popup_menu : PopupMenu = $PopupMenu
 @onready var popup_menu_output : TextEdit = $HBoxContainer/VBoxContainer3/PopupMenuOutput
 @onready var popup_panel : PopupPanel = $PopupPanel
+@onready var status_indicator: StatusIndicator = $StatusIndicator
 
 
 func _on_embed_subwindows_toggled(toggled_on: bool) -> void:
@@ -179,3 +180,7 @@ func _on_popup_panel_button_pressed() -> void:
 
 func _on_popup_menu_option_pressed(option: String) -> void:
 	popup_menu_output.text = option + " was pressed."
+
+
+func _on_status_indicator_visible_toggled(toggled_on: bool) -> void:
+	status_indicator.visible = toggled_on
